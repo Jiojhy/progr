@@ -1,0 +1,65 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+	setlocale(LC_ALL, "Russian");
+	// Задание 1
+	double a, b, c;
+	cout << "Задание 1\n";
+	cout << "Введите A и B\n";
+	cin >> a >> b;
+	c = a;
+	a = b;
+	b = c;
+	cout << "a = " << a << "\nb = " << b;
+	// Задание 2
+	cout << "\nЗадание 2\n";
+	double d;
+	cout << "Введите A, B, C\n";
+	cin >> a >> b >> c;
+	d = a;
+	a = c;
+	c = b;
+	b = d;
+	cout << "a = " << a << "\nb = " << b << "\nc = " << c;
+	// Задание 3
+	cout << "\nЗадание 3\n";
+	cout << "Введите A, B, C\n";
+	cin >> a >> b >> c;
+	d = a;
+	a = b;
+	b = c;
+	c = d;
+	cout << "a = " << a << "\nb = " << b << "\nc = " << c;
+	// Задание 4
+	cout << "\nЗадание 4\n";
+	cout << "Введите х\n";
+	cin >> a;
+	b = 3 * (pow(a, 6)) - 6 * (pow(a, 2)) - 7;
+	cout << "y = " << b;
+	// Задание 5
+	cout << "\nЗадание 5\n";
+	cout << "Введите х\n";
+	cin >> a;
+	b = 4 * (pow(a - 3, 6)) - 7 * (pow(a - 3, 3)) + 2;
+	cout << "y = " << b;
+	// Задание 6
+	cout << "\nЗадание 5\n";
+	cout << "Введите A\n";
+	cin >> a;
+	a = a * a;
+	b = a * a;
+	a = b * b;
+	cout << "a = " << a;
+	// Задание 7
+	cout << "\nЗадание 7\n";
+	cout << "Введите A\n";
+	cin >> a;
+	b = a;
+	a = a * a;
+	c = a;
+	a = b * a;
+	a = a * c;
+	a = a * a * a;
+	cout << "a = " << a;
+}
