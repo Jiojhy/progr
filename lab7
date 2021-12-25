@@ -45,8 +45,8 @@ int main()
 	cout << "Введите A2, B2, C2\n";
 	cin >> A2 >> B2 >> C2;
 	b = 0;
-	for (double x = 1; x < 100; ++x)
-		for (double y = 1; y < 100; ++y)
+	for (double x = 1; x < 10000; ++x)
+		for (double y = 1; y < 10000; ++y)
 			if ((A1 * x + B1 * y == C1) and (A2 * x + B2 * y == C2)) {
 				cout << "x = " << x << "\ny = " << y;
 				b += 1;
