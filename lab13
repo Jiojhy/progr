@@ -1,0 +1,57 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    setlocale(LC_ALL, "Rus");
+    double a, N, x1, y;
+    //Задание 1
+    cout << "Задание 1\n";
+    cout << "Введите цену 1 кг конфет\n";
+    cin >> a;
+    a = a;
+    for (double x = 0.1; x < 1; x = x + 0.1)
+        cout << "Стоимость " << x << " конфет = " << a * x << endl;
+    //Задание 2
+    cout << "Задание 2\n";
+    cout << "Введите N\n";
+    cin >> N;
+    N = 1 + (N / 10 + 0.1);
+    a = 1.1;
+    for (double x2 = 1.2; x2 < N; x2 = x2 + 0.1)
+        a = a * x2;
+    cout << "" << a;
+    //Задание 3
+    cout << "\nЗадание 3\n";
+    cout << "Введите N\n";
+    cin >> N;
+    x1 = 1;
+    while (x1 < (2 * N - 1)) {
+        x1 += 2;
+        cout << pow(x1, 2) << endl;
+    }
+    //Задание 4
+    cout << "Задание 4\n";
+    cout << "Введите A\n";
+    cin >> a;
+    cout << "Введите N\n";
+    cin >> N;
+    x1 = a;
+    while (N != 0) {
+        x1 = x1 + pow(a, N);
+        N -= 1;
+    }
+    cout << "Сумма = " << x1 - (a - 1);
+    //Задание 5
+    cout << "\nЗадание 5\n";
+    cout << "Введите A\n";
+    cin >> a;
+    cout << "Введите N\n";
+    cin >> N;
+    x1 = 1;
+    y = 0;
+    while (y < N-1) {
+        x1 = x1 - pow(a, y + 1) + pow(a, y + 2);
+        y += 2;
+    }
+    cout << "Значение выражения = " << x1;
+}
