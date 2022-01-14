@@ -1,0 +1,95 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    int a, b, i, a1, a2, a3;
+    double p, S;
+    setlocale(LC_ALL, "Rus");
+    //Задание 1
+    cout << "Задание 1\n";
+    cout << "Введите A\n";
+    cin >> a;
+    cout << "Введите B\n";
+    cin >> b;
+    while (a < b) {
+        a += 1;
+        i = a;
+        while (i > 0) {
+            cout << a;
+            i -= 1;
+        }
+    }
+    //Задание 2
+    cout << "\nЗадание 2\n";
+    cout << "Введите A\n";
+    cin >> a;
+    cout << "Введите B\n";
+    cin >> b;
+    i = 0;
+    while (a >= b) 
+        a = a - b;
+    if (a >= 0)
+        cout << "Длина незанятой части = " << a;
+    else cout << "123Длина незанятой части = " << a + b;
+    //Задание 3
+    cout << "\nЗадание 3\n";
+    cout << "Введите N\n";
+    cin >> a;
+    b = 1;
+    i = 2;
+    while (b < a) {
+        b = b + i;
+        i += 1;
+    }
+    cout << i - 1;
+    //Задание 4
+    cout << "\nЗадание 4\n";
+    cout << "Введите P\n";
+    cin >> p;
+    S = 1000;
+    i = 0;
+    while (S <= 1100) {
+        S = S * (1 + p / 100);
+        i += 1;
+    }
+    cout << "Количество месяцев K =  " << i << endl << "Итоговый размер вклада S = " << S;
+    //Задание 5
+    cout << "\nЗадание 5\n";
+    cout << "Введите A и B\n";
+    cin >> a >> b;
+    while (a != 0 and b != 0) {
+        if (a > b)
+            a = a % b;
+        else b = b % a;
+    }
+    cout << a + b;
+    //Задание 6
+    cout << "\nЗадание 6\n";
+    cout << "Введите N\n";
+    cin >> b;
+    a = 1;
+    i = 0;
+    a1 = 0;
+    a2 = 1;
+    a3 = a1 + a2;
+    if (b == a2)
+        cout << "Порядковый номер числа Фибоначчи N = 2" << endl;
+    while (i == 0) {
+        a += 3;
+        a1 = a2 + a3;
+        if (b == a1) {
+            cout << "Порядковый номер числа Фибоначчи N = " << a - 1 << endl;
+            i += 1;
+        }
+        a2 = a3 + a1;
+        if (b == a2) {
+            cout << "Порядковый номер числа Фибоначчи N = " << a << endl;
+            i += 1;
+        }
+        a3 = a1 + a2;
+        if (b == a3) {
+            cout << "Порядковый номер числа Фибоначчи N = " << a + 1 << endl;
+            i += 1;
+        }
+    }
+}
