@@ -1,0 +1,109 @@
+#include <iostream>
+using namespace std;
+int writemass(int mass[])
+{
+    for (int c = 0; c < 101; c += 1) {
+        if (mass[c] > 0)
+            cout << mass[c] << " ";
+    }
+    return 0;
+}
+int zeroingmass(int mass[])
+{
+    for (int c = 0; c != 100; c += 1) {
+        mass[c] = 0;
+    }
+    return 0;
+}
+int main()
+{
+    int N, b, i = 0, a, A, D, B;
+    int mass[100] = {};
+    int arr2[100] = {};
+    setlocale(LC_ALL, "Rus");
+    //Задание 1
+    cout << "Задание 1\n";
+    cout << "Введите N\n";
+    cin >> N;
+    b = 1;
+    a = 2;
+    while (i < N) {
+        mass[i] = b;
+        i += 1;
+        b = b + a;
+    }
+    writemass(mass);
+    zeroingmass(mass);
+    //Задание 2
+    cout << "\nЗадание 2\n";
+    cout << "Введите N\n";
+    cin >> N;
+    cout << "Введите A\n";
+    cin >> A;
+    cout << "Введите D\n";
+    cin >> D;
+    i = 0;
+    while (i < N) {
+        if (i == 0)
+            mass[i] = A;
+        else mass[i] = A * pow(D, i);
+        i += 1;
+    }
+    writemass(mass);
+    zeroingmass(mass);
+    //Задание 3
+    cout << "\nЗадание 3\n";
+    cout << "Введите N\n";
+    cin >> N;
+    cout << "Введите A\n";
+    cin >> A;
+    cout << "Введите B\n";
+    cin >> B;
+    i = 2;
+    mass[0] = A;
+    mass[1] = B;
+    while (i < N) {
+        for (int z = 0; z < i; z += 1)
+            mass [i] = mass[i] + mass[z];
+        i += 1;
+    }
+    writemass(mass);
+    zeroingmass(mass);
+    //Задание 4
+    cout << "\nЗадание 4\n";
+    cout << "Введите N\n";
+    cin >> N;
+    i = 1;
+    for (int number = 0; number < N; number += 1) {
+        cout << "Введите A" << number + 1 << ": ";
+        cin >> mass[number];
+    }
+    for (int c = 0; c <= N - i; c += 1) {
+        if (mass[c] != mass[N - i])
+            cout << mass[c] << " " << mass[N - i] << " ";
+        else cout << mass[c];
+        i += 1;
+    }
+    //Задание 5
+    cout << "\nЗадание 5\n";
+    cout << "Введите N\n";
+    cin >> N;
+    i = 1;
+    for (int number = 0; number < N; number += 1) {
+        cout << "Введите A" << number + 1 << ": ";
+        cin >> mass[number];
+    }
+    for (int c = 0; c < N; c += 2) {
+        cout << mass[c] << " ";
+    }
+    cout << endl;
+    if (N % 2 == 0){
+        for (int c = 1; c < N; N -= 2) 
+            cout << mass[N - 1] << " ";
+    }
+    else {
+        N -= 1;
+        for (int c = 1; c < N; N -= 2)
+            cout << mass[N - 1] << " ";
+    }
+}
